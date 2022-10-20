@@ -39,6 +39,7 @@ span.Titre {
   padding: 30px;
   font-family: 'Pinyon Script', cursive;
   font-size: 80px;
+  margin-bottom: 1.5%;
 
   a {
     font-weight: bold;
