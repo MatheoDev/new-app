@@ -2,7 +2,7 @@
   <div class="home">
     <SearchBar />
 
-    {{ $store.state.news }}
+    <ListCard />
     <!-- <NewsList /> -->
     <Paginate />
   </div>
@@ -11,12 +11,14 @@
 <script>
 import SearchBar from '@/components/SearchBar/SearchBar.vue'
 import Paginate from '@/components/Paginate/Paginate.vue'
+import ListCard from '@/components/ListCard/ListCard.vue'
 
 export default {
   name: 'Home',
   components: {
     SearchBar,
-    Paginate
+    Paginate,
+    ListCard
   },
   mounted() {
     this.$store.dispatch('search')
