@@ -1,10 +1,15 @@
 <template>
   <div id="nav">
+    News App
   </div>
   <router-view/>
 </template>
 
 <style lang="less">
+body {
+  background-color: #D9D9D9;
+}
+
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -15,6 +20,8 @@
 
 #nav {
   padding: 30px;
+  font-family: 'Pinyon Script', cursive;
+  font-size: 70px;
 
   a {
     font-weight: bold;
