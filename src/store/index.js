@@ -33,6 +33,8 @@ export default createStore({
         url = `https://newsapi.org/v2/top-headlines?country=fr&apiKey=${data.apiKey}`
       }
 
+      console.log(url)
+
       // 0. loading = true
       // 1. Récupérer les données de l'API avec un fetch 
       // 2. Stocker les données dans le state de news
