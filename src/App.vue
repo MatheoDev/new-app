@@ -21,6 +21,7 @@ export default {
 <style lang="less">
 body {
   background-color: #d9d9d954;
+  font-family: 'Kameron', serif;
 }
 
 span.Titre {
@@ -29,11 +30,9 @@ span.Titre {
 }
 
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+  font-family: 'Kameron', serif;
 }
 
 #nav {
