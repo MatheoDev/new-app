@@ -50,4 +50,15 @@ span.Titre {
     }
   }
 }
+
+@media (max-width: 380px) {
+  span.Titre {
+    font-size: 4rem;
+  }
+}
+@media (min-width: 1025px) {
+  .home {
+    padding: 0 20%;
+  }
+}
 </style>

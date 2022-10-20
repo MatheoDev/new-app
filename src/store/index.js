@@ -15,7 +15,8 @@ export default createStore({
       sorting: '',
     },
     paginate: {
-
+      page: 1,
+      total: 0,
     }
   },
   mutations: {
