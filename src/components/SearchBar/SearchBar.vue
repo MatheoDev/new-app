@@ -2,9 +2,9 @@
   <div class="search-bar">
     <form class="search-bar__form">
       <el-input v-model="$store.state.search" placeholder="Recherche" class="search-bar__input"/>
-      <el-select v-model="$store.state.category" placeholder="Categorie" class="search-bar__input">
+      <el-select v-model="$store.state.sorting" placeholder="Categorie" class="search-bar__input">
         <el-option
-          v-for="item in $store.state.categories"
+          v-for="item in $store.state.sorting"
           :key="item.id"
           :label="item.name"
           :value="item.name"
