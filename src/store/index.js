@@ -30,6 +30,7 @@ export default createStore({
       let url = null
       if (state.form.search) {
         url = `https://newsapi.org/v2/everything?q=${state.form.search}&languague=fr&sortBy=${state.form.sorting}&apiKey=${data.apiKey}`
+
       } else {
         url = `https://newsapi.org/v2/top-headlines?country=fr&apiKey=${data.apiKey}`
       }
@@ -41,6 +42,15 @@ export default createStore({
       // 2. Stocker les données dans le state de news
       // 3. Catch les erreurs 
       // 4. finally => loading = false
+      fetch(url)
+      .then(response => response.json())
+      .then(data => {
+        console.log(data)
+        state.news = data.articles 
+      })
+      .catch(error => {
+        console.error(error)
+      })
     }
   },
   modules: {
