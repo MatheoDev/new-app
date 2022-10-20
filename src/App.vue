@@ -20,7 +20,7 @@ export default {
 
 <style lang="less">
 body {
-  background-color: #d9d9d954;
+  background-color: #F9F9F9;
   font-family: 'Kameron', serif;
 }
 
