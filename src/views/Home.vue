@@ -1,6 +1,8 @@
 <template>
   <div class="home">
     <SearchBar />
+
+    {{ $store.state.news }}
     <!-- <NewsList /> -->
     <Paginate />
   </div>
