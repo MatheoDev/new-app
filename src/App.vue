@@ -1,13 +1,31 @@
 <template>
   <div id="nav">
-    News App
+    <span class="Titre"> News App </span>
   </div>
   <router-view/>
+  <Footer/>
 </template>
+
+<script>
+import Footer from '@/components/Footer/Footer.vue'
+
+export default {
+  name: 'App',
+  components: {
+    Footer
+  }
+}
+
+</script>
 
 <style lang="less">
 body {
-  background-color: #D9D9D9;
+  background-color: #d9d9d954;
+}
+
+span.Titre {
+  border-bottom: #2c3e50 solid 1px;
+  padding-bottom: 10px;
 }
 
 #app {
@@ -21,7 +39,7 @@ body {
 #nav {
   padding: 30px;
   font-family: 'Pinyon Script', cursive;
-  font-size: 70px;
+  font-size: 80px;
 
   a {
     font-weight: bold;
