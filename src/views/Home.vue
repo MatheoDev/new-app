@@ -17,6 +17,9 @@ export default {
   components: {
     SearchBar,
     Paginate
+  },
+  mounted() {
+    this.$store.dispatch('search')
   }
 }
 </script>

@@ -10,7 +10,7 @@
           :value="item.name"
         />
       </el-select>
-      <el-button type="primary" class="search-bar__btn" @click="handleSearch">Rechercher</el-button>
+      <el-button type="primary" class="search-bar__btn" @click="handleSearch" :loading="$store.state.loading">Rechercher</el-button>
     </form>
   </div>
 </template>
