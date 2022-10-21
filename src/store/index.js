@@ -23,10 +23,6 @@ export default createStore({
   },
   actions: {
     search({ state }) {
-      // https://newsapi.org/v2/top-headlines?country=fr&apiKey=ff2ae2f3bcab49e9b4cfb5aa1d548f87
-      // https://newsapi.org/v2/everything?q=&languague=fr&sortBy=&apiKey=ff2ae2f3bcab49e9b4cfb5aa1d548f87
-      console.log('TODO dev search', state, data)
-
       let url = null
       if (state.form.search) {
         url = `https://newsapi.org/v2/everything?q=${state.form.search}&languague=fr&sortBy=${state.form.sorting}&pageSize=8&page=${state.paginate.page}&apiKey=${data.apiKey}`
@@ -41,7 +37,6 @@ export default createStore({
       })
         .then(response => response.json())
         .then(data => {
-          // add id to each news
           data.articles.forEach((article, index) => {
             article.id = index
           })
