@@ -23,7 +23,9 @@ export default createStore({
   },
   actions: {
     search({ state }) {
-      state.loading = true
+      // https://newsapi.org/v2/top-headlines?country=fr&apiKey=ff2ae2f3bcab49e9b4cfb5aa1d548f87
+      // https://newsapi.org/v2/everything?q=&languague=fr&sortBy=&apiKey=ff2ae2f3bcab49e9b4cfb5aa1d548f87
+      console.log('TODO dev search', state, data)
 
       let url = null
       if (state.form.search) {
