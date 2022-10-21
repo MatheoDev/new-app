@@ -33,7 +33,10 @@ export default createStore({
         url = `https://newsapi.org/v2/top-headlines?country=fr&apiKey=${data.apiKey}`
       }
       
-      fetch(url)
+      fetch('https://newsappzvefjw70-corsproxy.functions.fnc.fr-par.scw.cloud/', {
+        method: 'POST',
+        body: JSON.stringify({ url: url })
+      })
         .then(response => response.json())
         .then(data => {
           console.log(data)

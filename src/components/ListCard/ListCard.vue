@@ -1,5 +1,6 @@
 <template>
   <div class="liste__card">
+    {{ $store.state.news }}
     <div v-for="article in $store.state.news" :key="article.id" :article="article" />
   </div>
 </template>
