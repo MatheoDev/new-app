@@ -17,7 +17,7 @@ const client = new MongoClient(url);
          const col = db.collection("history");
 
          // Construct a document with what the user have searched for
-            let search = { search: "test"};
+            let search = { search: "Apple"};
 
          // Insert a single document, wait for promise so we can read it back
          const p = await col.insertOne(search);
