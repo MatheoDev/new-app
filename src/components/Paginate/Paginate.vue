@@ -30,7 +30,7 @@ export default {
 <style>
 .paginatation {
   display: flex;
-  justify-content: end;
+  justify-content: flex-end;
   margin: 1rem 0;
 }
 </style>

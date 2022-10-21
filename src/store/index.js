@@ -23,6 +23,7 @@ export default createStore({
   },
   actions: {
     search({ state }) {
+      state.loading = true
       let url = null
       if (state.form.search) {
         url = `https://newsapi.org/v2/everything?q=${state.form.search}&languague=fr&sortBy=${state.form.sorting}&pageSize=8&page=${state.paginate.page}&apiKey=${data.apiKey}`

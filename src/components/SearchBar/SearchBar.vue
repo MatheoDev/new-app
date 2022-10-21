@@ -16,12 +16,12 @@
 </template>
 
 <script>
-import { Input, ElSelect, ElButton } from 'element-plus'
+import { ElInput, ElSelect, ElButton } from 'element-plus'
 
 export default {
   name: 'SearchBar',
   components: {
-    "el-input": Input,
+    "el-input": ElInput,
     "el-select": ElSelect,
     "el-button": ElButton,
   },
