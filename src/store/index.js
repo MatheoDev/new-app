@@ -27,10 +27,10 @@ export default createStore({
 
       let url = null
       if (state.form.search) {
-        url = `https://newsapi.org/v2/everything?q=${state.form.search}&languague=fr&sortBy=${state.form.sorting}&apiKey=${data.apiKey}`
+        url = `https://newsapi.org/v2/everything?q=${state.form.search}&languague=fr&sortBy=${state.form.sorting}&pageSize=8&page=${state.paginate.page}&apiKey=${data.apiKey}`
 
       } else {
-        url = `https://newsapi.org/v2/top-headlines?country=fr&apiKey=${data.apiKey}`
+        url = `https://newsapi.org/v2/top-headlines?country=fr&pageSize=8&page=${state.paginate.page}&apiKey=${data.apiKey}`
       }
       
       fetch('https://newsappzvefjw70-corsproxy.functions.fnc.fr-par.scw.cloud/', {
@@ -39,8 +39,13 @@ export default createStore({
       })
         .then(response => response.json())
         .then(data => {
-          console.log(data)
+          // add id to each news
+          data.articles.forEach((article, index) => {
+            article.id = index
+          })
           state.news = data.articles 
+          state.paginate.total = data.totalResults
+          state.paginate.total
         })
         .catch(error => {
           console.error(error)

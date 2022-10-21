@@ -21,6 +21,7 @@ export default {
   methods: {
     handleCurrentChange(page) {
       this.$store.state.paginate.page = page
+      this.$store.dispatch('search')
     }
   }
 }
