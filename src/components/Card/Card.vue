@@ -1,12 +1,15 @@
 <template>
   <el-row>
-    <el-card :body-style="{ padding: '0px' }">
+    <el-card :id="article.id" :body-style="{ padding: '0px' }">
       <img :id="article.id" :src="article.urlToImage ? article.urlToImage : 'https://via.placeholder.com/150'" class="image" :alt="article.urlToImage" />
       <div style="padding: 14px">
         <span class="title"> {{ article.title }} </span>
         <div class="bottom">
           <span class="date">{{ article.publishedAt }}</span>
-          <el-button type="info" class="search-bar__btn" @click="handleClick">Voir plus</el-button>
+          <div class="btn">
+            <el-button type="info" class="search-bar__btn" @click="handleClick">Voir plus</el-button>
+            <el-button type="default" class="search-bar__btn" @click="onShare">Partager</el-button>
+          </div>
         </div>
       </div>
     </el-card>
@@ -36,8 +39,22 @@ export default {
 
   methods: {
     handleClick() {
-      // retdirect vers le lien de l'article en target
+      // retdirect vers le lien de l'article 
       window.open(this.article.url, '_blank');
+    },
+    async onShare() {
+      try {
+        const shareData = {
+          title: this.article.title,
+          autheur: this.article.author,
+          url: this.article.url,
+        }
+        console.log(navigator)
+        await navigator.share(shareData)
+        console.log('Article share successfully.')
+      } catch (err) {
+        console.log(`Error: ${err}`)
+      }
     }
   }
 }
