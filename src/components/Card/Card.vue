@@ -8,7 +8,7 @@
           <span class="date">{{ article.publishedAt }}</span>
           <div class="btn">
             <el-button type="default" class="search-bar__btn" @click="handleClick">Voir plus</el-button>
-            <el-button type="primary" class="search-bar__btn" @click="handleSound">PP</el-button>
+            <el-button type="primary" class="search-bar__btn" @click="handleSound"><el-icon><Service/></el-icon></el-button>
           </div>
         </div>
       </div>
@@ -18,8 +18,8 @@
 
 
 <script>
-import { ElCard, ElRow, ElButton } from 'element-plus';
-
+import { ElCard, ElRow, ElButton, ElIcon } from 'element-plus';
+import { Service } from '@element-plus/icons';
 
 export default {
   name: 'Card',
@@ -34,6 +34,8 @@ export default {
     "el-card": ElCard,
     "el-row": ElRow,
     "el-button": ElButton,
+    "el-icon": ElIcon,
+    Service
   },
 
   props: {
