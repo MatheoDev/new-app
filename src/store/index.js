@@ -6,9 +6,9 @@ export default createStore({
     loading: false,
     news: [],
     sorting: [
-      { id: 1, name: 'Popularité' },
-      { id: 2, name: 'Pertinence' },
-      { id: 3, name: 'Publié récemment' },
+      { id: 1, name: 'Popularité', value: 'popularity' },
+      { id: 2, name: 'Pertinence', value: 'relevancy' },
+      { id: 3, name: 'Publié récemment', value: 'publishedAt' },
     ],
     form: {
       search: '',

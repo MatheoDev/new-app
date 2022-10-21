@@ -7,7 +7,7 @@
           v-for="item in $store.state.sorting"
           :key="item.id"
           :label="item.name"
-          :value="item.name"
+          :value="item.value"
         />
       </el-select>
       <el-button type="primary" class="search-bar__btn" @click="handleSearch" :loading="$store.state.loading">Rechercher</el-button>
