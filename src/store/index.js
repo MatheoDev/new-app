@@ -23,7 +23,9 @@ export default createStore({
   },
   actions: {
     search({ state }) {
-      state.loading = true
+      // https://newsapi.org/v2/top-headlines?country=fr&apiKey=ff2ae2f3bcab49e9b4cfb5aa1d548f87
+      // https://newsapi.org/v2/everything?q=&languague=fr&sortBy=&apiKey=ff2ae2f3bcab49e9b4cfb5aa1d548f87
+      console.log('TODO dev search', state, data)
 
       let url = null
       if (state.form.search) {
@@ -32,19 +34,23 @@ export default createStore({
       } else {
         url = `https://newsapi.org/v2/top-headlines?country=fr&apiKey=${data.apiKey}`
       }
-      
+
+      console.log(url)
+
+      // 0. loading = true
+      // 1. Récupérer les données de l'API avec un fetch 
+      // 2. Stocker les données dans le state de news
+      // 3. Catch les erreurs 
+      // 4. finally => loading = false
       fetch(url)
-        .then(response => response.json())
-        .then(data => {
-          console.log(data)
-          state.news = data.articles 
-        })
-        .catch(error => {
-          console.error(error)
-        })
-        .finally(() => {
-          state.loading = false
-        })
+      .then(response => response.json())
+      .then(data => {
+        console.log(data)
+        state.news = data.articles 
+      })
+      .catch(error => {
+        console.error(error)
+      })
     }
   },
   modules: {
