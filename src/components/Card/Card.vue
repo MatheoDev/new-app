@@ -7,8 +7,8 @@
         <div class="bottom">
           <span class="date">{{ article.publishedAt }}</span>
           <div class="btn">
-            <el-button type="info" class="search-bar__btn" @click="handleClick">Voir plus</el-button>
-            <el-button type="default" class="search-bar__btn" @click="onShare">Partager</el-button>
+            <el-button type="default" class="search-bar__btn" @click="handleClick">Voir plus</el-button>
+            <el-button type="primary" class="search-bar__btn" @click="handleSound">PP</el-button>
           </div>
         </div>
       </div>
@@ -23,6 +23,12 @@ import { ElCard, ElRow, ElButton } from 'element-plus';
 
 export default {
   name: 'Card',
+
+  data() {
+    return {
+      sound: null,
+    };
+  },
 
   components: {
     "el-card": ElCard,
@@ -40,21 +46,13 @@ export default {
   methods: {
     handleClick() {
       // retdirect vers le lien de l'article 
-      window.open(this.article.url, '_blank');
+      window.open(this.article.url, '_blank')
     },
-    async onShare() {
-      try {
-        const shareData = {
-          title: this.article.title,
-          autheur: this.article.author,
-          url: this.article.url,
-        }
-        console.log(navigator)
-        await navigator.share(shareData)
-        console.log('Article share successfully.')
-      } catch (err) {
-        console.log(`Error: ${err}`)
+    handleSound() {
+      if (!this.sound) {
+        this.sound = new SpeechSynthesisUtterance(this.article.description)
       }
+      window.speechSynthesis.speak(this.sound)
     }
   }
 }
