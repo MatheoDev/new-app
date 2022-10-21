@@ -34,23 +34,22 @@ export default createStore({
       } else {
         url = `https://newsapi.org/v2/top-headlines?country=fr&apiKey=${data.apiKey}`
       }
-
-      console.log(url)
-
-      // 0. loading = true
-      // 1. Récupérer les données de l'API avec un fetch 
-      // 2. Stocker les données dans le state de news
-      // 3. Catch les erreurs 
-      // 4. finally => loading = false
-      fetch(url)
-      .then(response => response.json())
-      .then(data => {
-        console.log(data)
-        state.news = data.articles 
+      
+      fetch('https://newsappzvefjw70-corsproxy.functions.fnc.fr-par.scw.cloud/', {
+        method: 'POST',
+        body: JSON.stringify({ url: url })
       })
-      .catch(error => {
-        console.error(error)
-      })
+        .then(response => response.json())
+        .then(data => {
+          console.log(data)
+          state.news = data.articles 
+        })
+        .catch(error => {
+          console.error(error)
+        })
+        .finally(() => {
+          state.loading = false
+        })
     }
   },
   modules: {
