@@ -10,12 +10,12 @@
 
 
 <script>
-import {Elfooter} from 'element-plus'
+import {ElFooter} from 'element-plus'
 
 export default {
     name: 'Footer',
     components: {
-        "el-footer": Elfooter,
+        "el-footer": ElFooter,
     }
 }
 </script>
