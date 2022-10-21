@@ -1,18 +1,27 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <SearchBar />
+
+    <ListCard />
+    <!-- <NewsList /> -->
+    <Paginate />
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
+import SearchBar from '@/components/SearchBar/SearchBar.vue'
+import Paginate from '@/components/Paginate/Paginate.vue'
+import ListCard from '@/components/ListCard/ListCard.vue'
 
 export default {
   name: 'Home',
   components: {
-    HelloWorld
+    SearchBar,
+    Paginate,
+    ListCard
+  },
+  mounted() {
+    this.$store.dispatch('search')
   }
 }
 </script>
